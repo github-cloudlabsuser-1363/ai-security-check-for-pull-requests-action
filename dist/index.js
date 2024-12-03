@@ -9353,7 +9353,7 @@ const axios = __nccwpck_require__(8757)
 
 const OPEN_AI_MODEL = "gpt-3.5-turbo"
 const OPENAI_API = axios.create({
-  baseURL: "https://open-ai-contoso.openai.azure.com/openai/deployments/gpt-35-turbo/",
+  baseURL: "https://open-ai-contoso.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview",
   headers: {
     "Content-Type": "application/json",
     "api-key": `${process.env.OPENAI_TOKEN}`,
@@ -9370,7 +9370,7 @@ const GH_API = axios.create({
 async function analyzeCode(code) {
   try {
     const prompt = `Analyze the following code snippet for security and privacy issues using GPT-3.5-turbo:\n\nCode:\n${code}\n\nIssues:\n`
-    const response = await OPENAI_API.post("chat/completions", {
+    const response = await OPENAI_API.post("", {
       model: OPEN_AI_MODEL,
       messages: [
         {
