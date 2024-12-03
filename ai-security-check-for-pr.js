@@ -5,7 +5,7 @@ const axios = require("axios")
 
 const OPEN_AI_MODEL = "gpt-3.5-turbo"
 const OPENAI_API = axios.create({
-  baseURL: "https://api.openai.com/v1/",
+  baseURL: "https://open-ai-contoso.openai.azure.com/v1/",
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${process.env.OPENAI_TOKEN}`,
